@@ -1,0 +1,54 @@
+<html>
+<head>
+	<title>World of Warcraft</title>
+	<style>
+		body {
+			background-color:#040c17;
+			font-family: monospace;
+			color:#e5c100;
+			font-size:60px;
+			text-align: center;
+			margin-top:10%;
+		}
+		#magic{
+			color: #7f6b00;
+			border-right: 1px solid #777;
+			padding-right: 7px;
+			display: inline-block;
+            white-space:pre;
+		}
+	</style>
+</head>
+<body>
+    <div style="height: 100%; width: 100%; text-align: center; margin: 0; padding: 0;">
+    <video class="myVideo" src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/L6E8QFPGTYUS1537981155888.mp4" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/L6E8QFPGTYUS1537981155888.mp4" loop="loop" muted="muted" autoplay="autoplay" playsinline="playsinline" style="position: fixed; right: 0; bottom: 0; min-width: 100%; margin: 0; padding: 0;"></video>
+
+    <div style="position: fixed; bottom: 0; width: 110%; height: 100%; background: rgba(0, 0, 0, 0.6); left: -5%">
+        <img src="https://worldofwarcraft.akamaized.net/static/components/Logo/Logo-wow.png" style="margin-top: 15%">
+        <div style="height: 50px"></div>
+        <div>World of Warcraft is <div id="magic"></div> </div>
+    </div>
+</div>
+    
+  <script>
+		var words = ["alot of fun", "stressful, but still fun", "challenging and fun", "a walking simluator", "what I learned at CodingDojo!"],
+			el = document.getElementById('magic');
+			word_counter = 0;
+			character_counter = 0;
+		function updateText()
+		{
+			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+			if(character_counter == words[word_counter].length + 1)
+			{
+				word_counter++;
+				character_counter = 0;
+				el.innerHTML = '';
+
+				if(word_counter == words.length)
+					word_counter = 0;
+			}
+		}
+		setInterval(updateText,300);
+	</script>
+</body>
+</html>
